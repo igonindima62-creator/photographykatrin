@@ -1,0 +1,41 @@
+/* Burgundy and navy velvet in the original two-colour palette. */
+:root {
+  --navy: #001124;
+  --navy-deep: #000b18;
+  --navy-soft: #071a2c;
+  --wine: #430014;
+  --wine-dark: #30000e;
+}
+html, body { background: #001124; }
+body { isolation: auto; }
+body::before { content: none; }
+.hero, .home-invitation, .prices {
+  background-color: #30000e;
+  background-image: linear-gradient(rgba(18,0,5,.08), rgba(18,0,5,.1)), url('assets/velvet-burgundy-v2.jpg');
+  background-position: center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;
+}
+.about, .home-intro, .home-selected, .portfolio, .transform, .booking, .page-next, .site-footer {
+  background-color: #001124;
+  background-image: linear-gradient(rgba(0,7,16,.1), rgba(0,7,16,.12)), url('assets/velvet-navy-v1.jpg');
+  background-position: center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;
+}
+.site-footer { border-top-color: rgba(244,239,234,.2); }
+.site-header { background: rgba(4, 15, 30, .7); }
+.folio-card-index, .folio-card-open, .compare-label { background: rgba(0, 10, 23, .82); }
+.gallery-dialog {
+  background-color: #001124;
+  background-image: linear-gradient(rgba(0,7,16,.32), rgba(0,7,16,.36)), url('assets/velvet-navy-v1.jpg');
+  background-position: center; background-size: cover; background-repeat: no-repeat;
+}
+.gallery-arrow, .gallery-close { background: rgba(0, 10, 23, .88); }
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .site-header { background: rgba(4, 15, 30, .96); }
+}
+@supports (-webkit-touch-callout: none) {
+  .hero, .home-invitation, .prices, .about, .home-intro, .home-selected, .portfolio,
+  .transform, .booking, .page-next, .site-footer {
+    background-attachment: scroll;
+    background-size: auto, 1100px auto;
+    background-repeat: no-repeat, repeat;
+  }
+}
