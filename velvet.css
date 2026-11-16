@@ -1,41 +1,36 @@
-/* Burgundy and navy velvet in the original two-colour palette. */
+/* Solid burgundy palette with a translucent navigation bar. */
 :root {
-  --navy: #001124;
-  --navy-deep: #000b18;
-  --navy-soft: #071a2c;
-  --wine: #430014;
+  --navy: #30000e;
+  --navy-deep: #30000e;
+  --navy-soft: #54162a;
+  --wine: #30000e;
   --wine-dark: #30000e;
 }
-html, body { background: #001124; }
-body { isolation: auto; }
+html, body { background: #30000e; }
+body { isolation: auto; padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
 body::before { content: none; }
-.hero, .home-invitation, .prices {
-  background-color: #30000e;
-  background-image: linear-gradient(rgba(18,0,5,.08), rgba(18,0,5,.1)), url('assets/velvet-burgundy-v2.jpg');
-  background-position: center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;
+.hero, .home-invitation, .prices, .about, .home-intro, .home-selected,
+.portfolio, .transform, .booking, .gallery-dialog {
+  background: #30000e;
 }
-.about, .home-intro, .home-selected, .portfolio, .transform, .booking, .page-next, .site-footer {
-  background-color: #001124;
-  background-image: linear-gradient(rgba(0,7,16,.1), rgba(0,7,16,.12)), url('assets/velvet-navy-v1.jpg');
-  background-position: center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;
+.site-header { background: rgba(46, 7, 20, .76); }
+.folio-card-index, .folio-card-open, .compare-label { background: rgba(49, 8, 22, .88); }
+.gallery-arrow, .gallery-close { background: rgba(49, 8, 22, .9); }
+.magazine .portfolio-card-image { background: #54162a; }
+.home-intro-copy > p:not(.eyebrow) { color: #f0e4e3; }
+.home-work-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px 18px; }
+.home-work > span { color: #f2e7e6; font-size: 11px; letter-spacing: .11em; }
+.home-invitation { padding-top: 10px; padding-bottom: 55px; }
+.magazine-masthead { padding: 12px 0 30px; }
+.magazine-toolbar { border-top: 0; }
+@media (max-width: 700px) {
+  .home-intro-layout { gap: 32px; }
+  .home-intro-copy > p:not(.eyebrow) { margin: 22px 0; }
+  .home-work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px 12px; }
+  .home-work-grid .home-work:last-child { display: block; }
+  .home-work > span { font-size: 10px; }
+  .magazine-masthead { padding: 12px 0 25px; }
 }
-.site-footer { border-top-color: rgba(244,239,234,.2); }
-.site-header { background: rgba(4, 15, 30, .7); }
-.folio-card-index, .folio-card-open, .compare-label { background: rgba(0, 10, 23, .82); }
-.gallery-dialog {
-  background-color: #001124;
-  background-image: linear-gradient(rgba(0,7,16,.32), rgba(0,7,16,.36)), url('assets/velvet-navy-v1.jpg');
-  background-position: center; background-size: cover; background-repeat: no-repeat;
-}
-.gallery-arrow, .gallery-close { background: rgba(0, 10, 23, .88); }
 @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
-  .site-header { background: rgba(4, 15, 30, .96); }
-}
-@supports (-webkit-touch-callout: none) {
-  .hero, .home-invitation, .prices, .about, .home-intro, .home-selected, .portfolio,
-  .transform, .booking, .page-next, .site-footer {
-    background-attachment: scroll;
-    background-size: auto, 1100px auto;
-    background-repeat: no-repeat, repeat;
-  }
+  .site-header { background: rgba(46, 7, 20, .97); }
 }

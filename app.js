@@ -152,6 +152,7 @@
     const card = document.createElement('button');
     card.type = 'button';
     card.className = 'portfolio-card';
+    card.dataset.albumId = album.id;
     card.dataset.group = ['wedding', 'roman-svetlana', 'dasha'].includes(album.id) ? 'stories' : 'portraits';
     card.dataset.photos = String(album.images.length);
     card.setAttribute('aria-label', `${metadata.title}, ${metadata.label.toLowerCase()}. Открыть съёмку, фотографий: ${album.images.length}`);
@@ -223,4 +224,9 @@
     if (Math.abs(delta) > 55) moveImage(delta < 0 ? 1 : -1);
     touchStartX = null;
   }, { passive: true });
+
+  const requestedAlbumId = new URLSearchParams(window.location.search).get('album');
+  const requestedAlbum = catalog.find(album => album.id === requestedAlbumId && album.images?.length);
+  const requestedCard = Array.from(grid.querySelectorAll('.portfolio-card')).find(card => card.dataset.albumId === requestedAlbumId);
+  if (requestedAlbum && requestedCard) openGallery(requestedAlbum, requestedCard);
 })();
