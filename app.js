@@ -81,6 +81,8 @@
 
   const catalog = Array.isArray(window.PORTFOLIO) ? window.PORTFOLIO : [];
   const display = {
+    'photoday': { title: 'Фотодень', cover: 0, label: 'ФОТОДЕНЬ' },
+    'studio': { title: 'Студийная съёмка', cover: 0, label: 'СТУДИЙНАЯ СЪЁМКА' },
     'wedding': { title: 'Свадьба', cover: 1, label: 'СВАДЕБНАЯ ИСТОРИЯ' },
     'roman-svetlana': { title: 'Роман и Светлана', cover: 8, label: 'ИСТОРИЯ ДВОИХ' },
     'dasha': { title: 'Даша', cover: 21, label: 'ИСТОРИЯ В КАДРАХ' },
